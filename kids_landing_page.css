@@ -1,0 +1,37 @@
+body {
+    background-color: #141414;
+    color: white;
+}
+
+.navbar {
+    font-size: 1.1rem;
+}
+
+#featured-video{
+    margin-top: 20px;
+}
+
+.video-card {
+    background-color: #333;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.video-card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.video-card h3{
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.navbar .nav-link i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.navbar .nav-link i:hover {
+    color: #ff4747;
+}
