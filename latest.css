@@ -1,0 +1,165 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark theme for movie focus */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ffcc00;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1rem;
+}
+
+/* Search bar styling */
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+#searchInput {
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    margin-right: 10px;
+}
+
+#searchButton {
+    background-color: #ffcc00;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #e6b800;
+}
+
+/* Latest Movies section */
+.container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+/* Movie container grid */
+#movieContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible, responsive grid */
+    gap: 20px; /* Space between movie cards */
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Individual movie card */
+.movie-card {
+    background-color: #2c2c2c; 
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+/* Hover effect for movie cards */
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+/* Movie image styling */
+.movie-card img {
+    width: 100%;
+    height: 200px; /* Uniform height for consistency */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Movie title */
+.movie-card h5 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ffcc00;
+}
+
+/* Movie description */
+.movie-card p {
+    font-size: 0.9rem;
+    color: #d9d9d9;
+    margin: 10px 0;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Call-to-action buttons */
+.movie-card .btn {
+    background-color: #ffcc00;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.movie-card .btn:hover {
+    background-color: #e6b800;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #movieContainer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .movie-card {
+        padding: 8px;
+    }
+
+    .movie-card img {
+        height: 180px;
+    }
+
+    .movie-card h5 {
+        font-size: 1.1rem;
+    }
+
+    .movie-card p {
+        font-size: 0.8rem;
+    }
+
+    #searchInput {
+        width: 250px;
+    }
+}
