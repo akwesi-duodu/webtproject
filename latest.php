@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,17 +28,11 @@
     </nav>
 
     <!-- Search Section -->
-    <div class="container my-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <input type="text" id="searchInput" class="form-control" placeholder="Search movies...">
-                    <div class="input-group-append">
-                        <button id="searchButton" class="btn btn-warning">Search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="search-container">
+        <form method="GET" action="">
+            <input type="text" name="search" class="form-control" placeholder="Search movies..." value="">
+            <button type="submit" class="btn">Search</button>
+        </form>
     </div>
 
     <!-- Latest Movies Section -->

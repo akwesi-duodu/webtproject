@@ -38,35 +38,6 @@ CREATE TABLE movies (
     category ENUM('Adult', 'Kids') NOT NULL
 );
 
--- Create the Adult Table
-CREATE TABLE adult_movies (
-    adult_movie_id INT AUTO_INCREMENT PRIMARY KEY,
-    movie_id INT NOT NULL,
-    genre VARCHAR(100) NOT NULL,
-    rating DECIMAL(2, 1),
-    release_date DATE NOT NULL,
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE
-);
-
--- Create the Cartoon Table
-CREATE TABLE cartoons (
-    cartoon_movie_id INT AUTO_INCREMENT PRIMARY KEY,
-    movie_id INT NOT NULL,
-    age_group VARCHAR(50) NOT NULL,
-    genre VARCHAR(100) NOT NULL,
-    release_date DATE NOT NULL,
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE
-);
-
--- Create the Kids Table
-CREATE TABLE kids_movies (
-    kids_movie_id INT AUTO_INCREMENT PRIMARY KEY,
-    movie_id INT NOT NULL,
-    age_group VARCHAR(50) NOT NULL,
-    genre VARCHAR(100) NOT NULL,
-    release_date DATE NOT NULL,
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE
-);
 
 -- Create the Notification Table
 CREATE TABLE notifications (
@@ -86,22 +57,3 @@ CREATE TABLE latest_alerts (
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE
 );
 
--- Create the Watch List Table
-CREATE TABLE watchlist (
-    watchlist_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    movie_id INT NOT NULL,
-    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE,
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE
-);
-
--- Create the Wishlist Table
-CREATE TABLE wishlist (
-    wishlist_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    movie_id INT NOT NULL,
-    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE,
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE
-);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVS | Movie Industry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="industry.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!--header section-->
+    <header class="bg-[#722f37] text-white py-4">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <i class="fas fa-film text-3xl text-blue-500"></i>
+                <h1 class="text-2x1 font-bold ml-2">DEVSMovieShare</h1>
+            </div>
+
+            <nav class="flex space-x-6 items-center">
+                <ul class="flex space-x-6">
+                    <li><a class="text-white hover:underline" href="landing_page.php">Home</a></li>
+                    <li><a class="text-white hover:underline" href="#movies">Movies</a></li>
+                    <li><a class="text-white hover:underline" href="upcoming_movie.php">Upcoming</a></li>
+                    <li><a class="text-white hover:underline" href="latest.html">Latest</a></li>
+                    <li><a class="text-white hover:underline" href="#about">About</a></li>
+                    <li><a class="text-white hover:underline" href="#contact">Contact</a></li>
+                    <li><a class="text-white hover:underline" href="#faqs">FAQs</a></li>
+                </ul>
+
+                <!--dropdown for industry-based movie selection-->
+                <div class="relative">
+                    <select id="industryDropdown" class="p-2 bg-white text-black rounded">
+                        <option value="">Industry</option>
+                        <option value="Nollywood">Nollywood</option>
+                        <option value="Hollywood">Hollywood</option>
+                        <option value="Korean Cinema">Korean Drama</option>
+                        <option value="Chinese Cinema">Chinese Cinema</option>
+                        <option value="Bollywood">Bollywood</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--main content section-->
+    <main class="container mx-auto mt-8">
+        <div id="movieContainer" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!--movie cards will be dynamically populated-->
+        </div>
+    </main>
+
+    <!-- Comment Modal -->
+    <div id="commentModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded shadow-lg w-96">
+            <h2 class="text-lg font-bold mb-4">Add Comment</h2>
+            <textarea id="commentInput" class="w-full p-2 border rounded mb-4" rows="5" placeholder="Write your comment here..."></textarea>
+            <div class="flex justify-end gap-4">
+                <button id="closeModalButton" class="bg-gray-500 text-white py-1 px-3 rounded">Cancel</button>
+                <button id="saveCommentButton" class="bg-blue-600 text-white py-1 px-3 rounded">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="industry.js"></script>
+
+</body>
+</html>
+
